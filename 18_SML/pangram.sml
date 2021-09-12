@@ -22,20 +22,7 @@ fun is_in_all([], search_list) = true
 fun str_to_int_list s = map ord (explode s);
 
 (*convert ascii ordinal to lower case*)
-fun lower_case num = fun gen_alph(122) = [122]
-| gen_alph(x) = x::gen_alph(x+1);
-
-val gn = gen_alph(97);
-
-fun is_in ([], num:int) = false
-| is_in (x::xs:int list, num:int) = (x=num) orelse is_in(xs,num);
-
-fun is_in_all([], search_list) = true
-| is_in_all(x::xs, search_list) = is_in(search_list, x) andalso is_in_all(xs, search_list);
-
-fun str_to_int_list s = map ord (explode s);
-
-fun isPangram s = is_in_all(gn, str_to_int_list(s));
+fun lower_case num = 
     if is_in(range(65, 90), num)
     then num + 32
     else num;
