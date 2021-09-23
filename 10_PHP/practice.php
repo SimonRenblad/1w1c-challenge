@@ -24,7 +24,13 @@ myFunction(2);
 myFunction(-5);
 myFunction(-2);
 
-
+function cross_product($arr1, $arr2) {
+	$out = array();
+	$out[0] = $arr1[1]*$arr2[2] - $arr1[2]*$arr2[1];
+	$out[1] = $arr1[2]*$arr2[0] - $arr1[0]*$arr2[2];
+	$out[2] = $arr1[0]*$arr2[1] - $arr1[1]*$arr2[0];
+	return $out;
+}
 
 
 
